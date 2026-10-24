@@ -17,14 +17,17 @@ int main() {
 		transform(command.begin(), command.end(), command.begin(), ::tolower);
 
 		if (command == "exit") {
+			std::cout << "\n";
 			break;
 		} else if (command == "open") {
 			customer.open_account();
-			std::cout << "\n";
 		} else if (command == "dep") {
 			customer.deposit_money();
-			std::cout << "\n";
+		} else if (command == "with") {
+			customer.withdraw_money();
 		}
+
+		std::cout << "\n";
 	}
 
 	return 0;

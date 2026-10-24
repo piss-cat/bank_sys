@@ -29,8 +29,26 @@ void Bank::deposit_money() {
 
 	if (amt > 0) {
 		balance += amt;
+		std::cout << "\nDeposit successfull!\n";
 		std::cout << "\nNew available balance: " << std::fixed << std::setprecision(2) << balance << std::endl;
 	} else {
 		std::cout << "\nInvalid deposit amount!\n";
+	}
+}
+
+void Bank::withdraw_money() {
+	float amt;
+
+	std::cout << "\nHow much will you be withdrawing? ";
+	std::cin >> amt;
+
+	if (amt > balance) {
+		std::cout << "\nInsufficient balance! Current balance is: " << std::fixed << std::setprecision(2) << balance << std::endl;
+	} else if (amt <= 0) {
+		std::cout << "\nInvalid withdrawal amount!\n";
+	} else {
+		balance -= amt;
+		std::cout << "\nWithdrawal successfull!\n";
+		std::cout << "\nNew available balance: " << std::fixed << std::setprecision(2) << balance << std::endl;
 	}
 }
