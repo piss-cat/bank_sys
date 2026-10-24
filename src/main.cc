@@ -18,8 +18,11 @@ int main() {
 
 		if (command == "exit") {
 			break;
-		} else if (command == "accopen") {
+		} else if (command == "open") {
 			customer.open_account();
+			std::cout << "\n";
+		} else if (command == "dep") {
+			customer.deposit_money();
 			std::cout << "\n";
 		}
 	}
